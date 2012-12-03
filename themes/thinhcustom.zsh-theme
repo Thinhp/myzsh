@@ -24,8 +24,11 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} [untracked]"
 function prompt_char() {
     if ~/local/bin/git rev-parse --git-dir > ~/local/dev/null 2>&1; then
 	echo "%{$fg[green]%}☼%{$reset_color%}"
+    else if [ -d .svn ];then
+	echo "%{$fg_bold[cyan]%}☣%{$reset_color%}"
     else
 	echo "%{$fg[cyan]%}☪%{$reset_color%}"
+	fi
     fi
 }
 
