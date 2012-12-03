@@ -15,10 +15,18 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} [renamed]"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} [unmerged]"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} [untracked]"
 
+#function prompt_char() {
+#  git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}☼%{$reset_color%}" && return
+#  hg root >/dev/null 2>/dev/null && echo "%{$fg_bold[red]%}☿%{$reset_color%}" && return
+#  echo "%{$fg[cyan]%}☪ %{$reset_color%}"
+#}
+
 function prompt_char() {
-  git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}☼%{$reset_color%}" && return
-  hg root >/dev/null 2>/dev/null && echo "%{$fg_bold[red]%}☿%{$reset_color%}" && return
-  echo "%{$fg[cyan]%}☪ %{$reset_color%}"
+    if ~/local/bin/git rev-parse --git-dir > ~/local/dev/null 2>&1; then
+	echo "%{$fg[green]%}☼%{$reset_color%}"
+    else
+	echo "%{$fg[cyan]%}☪%{$reset_color%}"
+    fi
 }
 
 #%D{[%I:%M:%S]} --> date of time
