@@ -1,4 +1,4 @@
-PROMPT=%{$fg[blue]%}╭$'%{$fg_bold[red]%} CIH World %{$fg_bold[green]%}%D{%a %b %d,%Y} %{$fg[yellow]%}◕%t %{$reset_color%}%{$FG[123]%}[%c] %{$reset_color%}$(git_prompt_short_sha) $(git_prompt_info)$(git_prompt_status)%{$FG[147]%}\
+PROMPT=%{$fg[blue]%}╭$'%{$fg_bold[red]%} CIH World %{$fg_bold[green]%}%D{%a %b %d,%Y} %{$fg[yellow]%}◕ %t %{$reset_color%}%{$FG[123]%}[%c] %{$reset_color%}$(git_prompt_short_sha) $(git_prompt_info)$(git_prompt_status)%{$FG[147]%}\
 %{$fg[blue]%}╰>$(prompt_char) %{'$FG[202]'%}➤%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[147]%}["
