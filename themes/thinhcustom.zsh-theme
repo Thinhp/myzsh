@@ -1,4 +1,4 @@
-PROMPT=%{$fg[blue]%}╭$'%{$fg_bold[red]%} CIH World %{$fg_bold[green]%}%D{%a %b %d,%Y} %{$fg[yellow]%}◕ %t %{$reset_color%}%{$FG[123]%}[%c] %{$reset_color%}$(git_prompt_short_sha) $(git_prompt_info)$(git_prompt_status)%{$FG[147]%}\
+PROMPT=%{$fg[blue]%}╭$'%{$fg_bold[red]%} CIH %{$reset_color%}%{$FG[123]%}[%c] %{$reset_color%}$(svn_prompt_info)$(git_prompt_short_sha) $(git_prompt_info)$(git_prompt_status)%{$FG[147]%}\
 %{$fg[blue]%}╰>$(prompt_char) %{'$FG[202]'%}➤%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[147]%}["
@@ -25,7 +25,11 @@ function prompt_char() {
     if git rev-parse --git-dir > /dev/null 2>&1;then
         echo "%{$fg[green]%}☼%{$reset_color%}"
     else
-        echo "%{$fg[cyan]%}☪%{$reset_color%}"
+        if [ -d ".svn" ];then
+            echo "%{$fg[yellow]%}☆%{$reset_color%}"
+        else
+            echo "%{$fg[cyan]%}☪%{$reset_color%}"
+        fi 
     fi
 }
 
@@ -45,15 +49,16 @@ function svn_prompt_info {
         
         # this is the slowest test of the bunch
         change_count=`svn status | grep "?\|\!\|M\|A" | wc -l`
-        if [ "$change_count" != "       0" ]; then
-            svn_change=" [dirty]"
+        if [ "$change_count" != 0 ]; then
+            svn_change="%{$reset_color%}%{$fg[red]%}[dirty]"
         else
-            svn_change=""
+            svn_change="%{$reset_color%}%{$fg[green]%}[clean]"
         fi
         
         # show the results
-        echo "%{$fg[blue]%}$svn_repository/$svn_branch @ $svn_version%{$reset_color%}%{$fg[yellow]%}$svn_change%{$reset_color%}"
+        echo "%{$fg[blue]%}$svn_repository/$svn_branch @ $svn_version $svn_change%{$reset_color%}"
         
     fi
 }
 #%D{[%I:%M:%S]} --> date of time
+#%{$fg_bold[green]%}%D{%a %b %d,%Y} %{$fg[yellow]%}◕ %t 
