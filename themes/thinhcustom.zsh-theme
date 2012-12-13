@@ -1,5 +1,6 @@
+RPROMPT='%{$fg_bold[green]%}%D{%a %b %d,%Y} %{$fg[yellow]%}◕ %t %{$reset_color%}'
 PROMPT=%{$fg[blue]%}╭$'%{$fg_bold[red]%} CIH %{$reset_color%}%{$FG[123]%}[%c] %{$reset_color%}$(svn_prompt_info)$(git_prompt_short_sha) $(git_prompt_info)$(git_prompt_status)%{$FG[147]%}\
-%{$fg[blue]%}╰>$(prompt_char) %{'$FG[202]'%}➤%{$reset_color%} '
+%{$fg[blue]%}╰>$(prompt_char) %{'$FG[202]'%}➤ %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[147]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{]$reset_color%}"
@@ -61,4 +62,4 @@ function svn_prompt_info {
     fi
 }
 #%D{[%I:%M:%S]} --> date of time
-#%{$fg_bold[green]%}%D{%a %b %d,%Y} %{$fg[yellow]%}◕ %t 
+#%{$fg_bold[green]%}%D{%a %b %d,%Y} %{$fg[yellow]%}◕ %t
