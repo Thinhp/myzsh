@@ -1,10 +1,8 @@
 h2. MY OH-MY-ZSH FEATURES
--ADDED thinhcustom theme
--EDITED many things such as .zshrc
--CREATED my own alias
--ADDED custom syntax highlighting
 
-
+@added thinhcustom theme custom syntax highlighting
+@edited many things such as .zshrc
+@created my own alias
 
 
 
