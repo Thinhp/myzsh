@@ -1,10 +1,14 @@
-MY OH-MY-ZSH FEATURES
--ADDED THINHCUSTOM THEME
--EDITED MANY THINGS
--CREATED MY OWN ALIAS
+h2. MY OH-MY-ZSH FEATURES
+-ADDED thinhcustom theme
+-EDITED many things such as .zshrc
+-CREATED my own alias
+-ADDED custom syntax highlighting
 
 
-ROBBYRUSSELL NOTES:
+
+
+
+h3. ROBBYRUSSELL NOTES:
 A handful of functions, auto-complete helpers, and stuff that makes you shout...
 
 
