@@ -33,9 +33,15 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
+http_proxy=http://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
+https_proxy=https://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
+ftp_proxy=ftp://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Customize to your needs...
+export http_proxy
+export https_proxy
+export ftp_proxy
 export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
