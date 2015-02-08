@@ -7,6 +7,8 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="thinhcustom"
 
+# Change color
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -33,15 +35,42 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
-http_proxy=http://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
-https_proxy=https://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
-ftp_proxy=ftp://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
+#http_proxy=http://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
+#https_proxy=https://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
+#ftp_proxy=ftp://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
 
+# Source
 source $ZSH/oh-my-zsh.sh
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/Documents/ansible/hacking/env-setup
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Customize to your needs...
 export http_proxy
 export https_proxy
 export ftp_proxy
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+homebrew=/usr/local/bin:/usr/local/sbin
+export PATH=$homebrew:$PATH
+export PATH="$PATH:$HOME/voltdb-ent-4.6/bin"
+export PATH=$PATH:/usr/local/mysql/bin
+export PATH="/usr/local/bin:$PATH"
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
+export WORKON_HOME=~/Envs
+export VIRTUALENVWRAPPER_PYTHON=`which python`
+export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
+#export ANSIBLE_HOSTS=~/ansible_hosts
+
+#LSCOLORS="exfxcxdxbxegedabagacad"
+#export LSCOLORS
+alias ggdns="sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4"
+alias ndns="sudo networksetup -setdnsservers Wi-Fi Empty"
+alias ana="cd ~/Documents/Floating\ Cube/analytics-framework"
+alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias mgvim="/Applications/MacVim.app/Contents/MacOS/MacVim"
+
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=/Users/tanthinh/Downloads/cocos2d-x-3.3beta0/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+#Clear screen
+clear
