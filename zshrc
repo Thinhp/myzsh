@@ -42,8 +42,7 @@ plugins=(git)
 # Source
 source $ZSH/oh-my-zsh.sh
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/Documents/ansible/hacking/env-setup
-source /usr/local/bin/virtualenvwrapper.sh
+#source ~/Documents/ansible/hacking/env-setup
 
 # Customize to your needs...
 export http_proxy
@@ -60,13 +59,16 @@ export VIRTUALENVWRAPPER_PYTHON=`which python`
 export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
 #export ANSIBLE_HOSTS=~/ansible_hosts
 
+# Source virtualwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+
 #LSCOLORS="exfxcxdxbxegedabagacad"
 #export LSCOLORS
 alias ggdns="sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4"
 alias ndns="sudo networksetup -setdnsservers Wi-Fi Empty"
-alias ana="cd ~/Documents/Floating\ Cube/analytics-framework"
 alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias mgvim="/Applications/MacVim.app/Contents/MacOS/MacVim"
+alias pyserver="python -m SimpleHTTPServer"
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Users/tanthinh/Downloads/cocos2d-x-3.3beta0/tools/cocos2d-console/bin
