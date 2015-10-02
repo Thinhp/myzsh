@@ -35,9 +35,6 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
-#http_proxy=http://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
-#https_proxy=https://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
-#ftp_proxy=ftp://s3357678:Godtrumteo121234@proxy.rmit.edu.vn:8080/;
 
 # Source
 source $ZSH/oh-my-zsh.sh
@@ -57,6 +54,7 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 export WORKON_HOME=~/Envs
 export VIRTUALENVWRAPPER_PYTHON=`which python`
 export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
+export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -f '
 #export ANSIBLE_HOSTS=~/ansible_hosts
 
 # Source virtualwrapper
@@ -69,6 +67,7 @@ alias ndns="sudo networksetup -setdnsservers Wi-Fi Empty"
 alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias mgvim="/Applications/MacVim.app/Contents/MacOS/MacVim"
 alias pyserver="python -m SimpleHTTPServer"
+alias postgresrun="postgres -D /usr/local/var/postgres"
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Users/tanthinh/Downloads/cocos2d-x-3.3beta0/tools/cocos2d-console/bin
