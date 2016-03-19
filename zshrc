@@ -42,11 +42,11 @@ source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #source ~/Documents/ansible/hacking/env-setup
 
 # Customize to your needs...
+# HTTP PROXY
 export http_proxy
 export https_proxy
 export ftp_proxy
-homebrew=/usr/local/bin:/usr/local/sbin
-export PATH=$homebrew:$PATH
+
 export PATH="$PATH:$HOME/voltdb-ent-4.6/bin"
 export PATH=$PATH:/usr/local/mysql/bin
 export PATH="/usr/local/bin:$PATH"
@@ -54,7 +54,24 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/
 export WORKON_HOME=~/Envs
 export VIRTUALENVWRAPPER_PYTHON=`which python`
 export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
-export GIT_EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -f '
+export GIT_EDITOR='~/Applications/MacVim.app/Contents/MacOS/Vim -f '
+
+# Homebrew
+homebrew=/usr/local/bin:/usr/local/sbin
+export PATH=$homebrew:$PATH
+
+# Macport
+export PATH=$HOME/macports/bin:$HOME/macports/sbin:$PATH
+export PATH=/opt/local/bin:$PATH
+export MANPATH=$HOME/macports/share/man:$MANPATH
+export PERL5LIB=$HOME/macports/lib/perl5/5.12.4:$HOME/macports/lib/perl5/vendor_perl/5.12.4:$PERL5LIB
+
+# NODE_PATH
+export PATH=$HOME/node_path/bin:$PATH
+
+# Mongodb
+export PATH=$HOME/mongodb/bin:$PATH
+
 #export ANSIBLE_HOSTS=~/ansible_hosts
 
 # Source virtualwrapper
@@ -64,10 +81,16 @@ source /usr/local/bin/virtualenvwrapper.sh
 #export LSCOLORS
 alias ggdns="sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4"
 alias ndns="sudo networksetup -setdnsservers Wi-Fi Empty"
-alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim"
-alias mgvim="/Applications/MacVim.app/Contents/MacOS/MacVim"
+alias mvim="~/Applications/MacVim.app/Contents/MacOS/Vim"
+alias mgvim="~/Applications/MacVim.app/Contents/MacOS/MacVim"
 alias pyserver="python -m SimpleHTTPServer"
 alias postgresrun="postgres -D /usr/local/var/postgres"
+
+# Macport alias
+alias port-home='$HOME/macports/bin/port'
+alias pho='$HOME/macports/bin/port'
+alias port-system='sudo /opt/local/bin/port'
+alias psy='sudo /opt/local/bin/port'
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 export COCOS_CONSOLE_ROOT=/Users/tanthinh/Downloads/cocos2d-x-3.3beta0/tools/cocos2d-console/bin
